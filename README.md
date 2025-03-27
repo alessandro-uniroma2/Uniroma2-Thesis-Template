@@ -4,9 +4,6 @@ This is a slightly modified version of La Trobe latex [template](https://www.ove
 
 I've made slight changes so that everything aligns with Uniroma2 Science department template. 
 
-Most importantly, I've uploaded it to [Overleaf](https://www.overleaf.com/) as a [template](https://www.overleaf.com/latex/templates/unofficial-la-trobe-university-template/zfbdwvyrxshz).
-
-
 ## Organization
 `thesis.tex` is the root document and includes the individual chapters. The content of the chapters can be found under `text/`. It is pretty self-explanatory. Figures can be placed under `figures/` or wherever you like. Bibliography should be put into `library.bib`. If you have multiple and/or large tables I recommend creating a separate folder and individula files for them and importing them.
 
