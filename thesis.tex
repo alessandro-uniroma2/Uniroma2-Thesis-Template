@@ -1,0 +1,175 @@
+% (unofficial) Uniroma2 Thesis Template
+% Copyright (C) 2024 Alessandro Magnosi
+%
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License along
+% with this program; if not, write to the Free Software Foundation, Inc.,
+% 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+%
+\RequirePackage[english=usenglishmax]{hyphsubst}
+\RequirePackage{acro}
+\documentclass[oneside,openany,titlepage,numbers=noenddot,headinclude,footinclude=true,cleardoublepage=empty,listof=totoc,paper=a4,fontsize=11pt,australian,twoside=semi,DIV=calc]{scrreprt} 
+
+% -----------------------------------------------------------------------------
+%   CONFIGURATION
+% -----------------------------------------------------------------------------
+% Thesis and submission:
+\newcommand{\myTitle}{Your Title}
+\newcommand{\annoaccademico}{AA-AA+1}
+\newcommand{\mySubmissionYear}{YYYY}
+\newcommand{\mySubmissionMonth}{MM}
+\newcommand{\mySubmissionDay}{DD}
+
+% Regarding yourself:
+\newcommand{\myFirstName}{First Name}
+\newcommand{\myLastName}{Last Name}
+\newcommand{\myWebsite}{My Website}
+\newcommand{\myBirthYear}{1979}
+\newcommand{\myBirthMonth}{January}
+\newcommand{\myBirthDay}{01}
+\newcommand{\myBirthPlace}{Rome}
+
+% Primary supervisor:
+\newcommand{\myProfTitle}{Prof.}
+\newcommand{\myProfFirstName}{Maurizio}
+\newcommand{\myProfLastName}{Talamo}
+\newcommand{\myProfWebsite}{http://dii.uniroma2.it/membro_personale/talamo-maurizio/}
+
+% Co-supervisor:
+\newcommand{\myOtherProfTitle}{Prof.}
+\newcommand{\myOtherProfFirstName}{Y}
+\newcommand{\myOtherProfLastName}{Y}
+\newcommand{\myOtherProfWebsite}{https://didatticaweb.uniroma2.it/docenti/curriculum/Y}
+
+% Co-examiner:
+\newcommand{\myOpponentProfTitle}{Prof.}
+\newcommand{\myOpponentProfFirstName}{Z}
+\newcommand{\myOpponentProfLastName}{Z}
+\newcommand{\myOpponentProfWebsite}{https://didattica.uniroma2.it/docenti/curriculum_vitae/Z}
+
+% University related:
+\newcommand{\myDepartment}{Department of Computer Science and Information Technology}
+\newcommand{\myFaculty}{Mathematical, Physical and Natural Sciences}
+\newcommand{\mySchool}{- of Computer Science}
+\newcommand{\myUni}{Uniroma2 "Tor Vergata" University}
+
+% Aliases - Shortcuts
+\newcommand{\candidato}{{\myFirstName} \textsc{\myLastName}}
+\newcommand{\relatore}{{\myProfTitle} {\myProfFirstName} \textsc{\myProfLastName}}
+\newcommand{\correlatore}{{\myOtherProfTitle} {\myOtherProfFirstName} \textsc{\myOtherProfLastName}}
+\newcommand{\controrelatore}{{\myOpponentProfTitle} {\myOpponentProfFirstName} \textsc{\myOpponentProfLastName}}
+% -----------------------------------------------------------------------------
+
+\input{classicthesis-config}
+\usepackage[a4paper,top=25.4mm,bottom=25.4mm,left=25mm, right=25mm,bindingoffset=6mm]{geometry} 
+\usepackage{minted}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[utf8]{listing}
+\usepackage{titlesec}
+% \usepackage[utf8]{inputenc}
+% \usepackage[acronym]{glossaries}
+
+\addbibresource{library.bib}
+
+\begin{document}
+  \frenchspacing
+  \raggedbottom
+  \selectlanguage{american}
+  
+  \pagestyle{plain}
+  \pagenumbering{roman}
+  
+
+  \singlespacing
+  \input{text/ch0-title}
+  \input{text/ch0-backside}
+
+  \chapter*{Statement of Authorship}
+  \addcontentsline{toc}{chapter}{Declaration of Authorship}
+  \input{text/ch0-declaration}
+
+  \input{text/ch0-dedication}
+    \chapter*{Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+  \input{text/ch0-abstract}
+  \input{text/ch0-acknowledgements}
+    \onehalfspacing
+  \input{text/ch0-contents}
+
+  \input{text/ch0-publications}
+\input{text/ch0-abbreviations}
+  
+  \cleardoublepage
+  \pagestyle{scrheadings}
+  \pagenumbering{arabic}
+  \onehalfspacing
+
+%--------------------------------------------------------------------
+% PART TITLE STYLE WORKAROUND
+%--------------------------------------------------------------------
+% Something is messing with the part title style
+% Putting it here for now
+%
+\titleformat{\part}[display]
+        {\normalfont\centering\LARGE}%
+        {\thispagestyle{empty}\partname~\MakeTextUppercase{\thepart}}{1em}%
+        {\color{Maroon}\spacedallcaps}
+%--------------------------------------------------------------------
+  \part{Introduction}
+  \chapter{Introduction}\label{c:Introduction}
+  \input{text/ch1}
+  \acresetall 
+  \part{Exposition}
+  \chapter{Background}\label{c:Background}
+  \input{text/ch2}
+  \acresetall 
+  \chapter{Previous Work}\label{c:Related-Works}
+  \input{text/ch3}
+  \acresetall 
+  \chapter{Our contribution}\label{c:Contribution-1}
+  \input{text/ch4}
+  \acresetall 
+  \chapter{Evaluation}\label{c:Experiments}
+  \input{text/ch5}
+\acresetall 
+  \chapter{Final Remarks}\label{c:Conclusions}
+  \input{text/ch6}
+  \acresetall 
+\begin{comment}
+  \chapter{Final Remarks}\label{c:Conclusions}
+  \input{text/ch7}
+\end{comment}
+
+  \cleardoublepage
+
+\part{Appendix}
+
+  \input{text/app-main} %Add appendices title to toc
+  \appendix
+ \chapter{Appendix 1}\label{app:A}
+  \acresetall 
+  \input{text/app-a}
+  \acresetall 
+\begin{comment}
+  \chapter{Appendix 2}\label{app:B}
+  \input{text/app-b}
+\end{comment}
+  
+  \singlespacing
+  \input{text/app-bibliography}
+  \cleardoublepage
+  
+  \pagestyle{empty}
+  \onehalfspacing
+  \input{text/app-colophon}
+
+\end{document}

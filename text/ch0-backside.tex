@@ -1,0 +1,133 @@
+\newsavebox{\applier}
+\sbox{\applier}{\parbox[b]{0.9\textwidth}
+                {\makebox[0.9\textwidth]{}\\
+                 \makebox[0.9\textwidth]
+                    {\parbox[t]{55mm}
+                        {
+                         \begin{tabular}[t]{l}
+                         	{\spacedallcaps{Candidate}}
+                          \end{tabular}
+                        }
+                     \hfill
+                     \parbox[t]{75mm}
+                        {
+                         \begin{tabular}[t]{>{\centering}m{7cm}}
+                          	\\ \hline
+                          {\spacedlowsmallcaps{\candidato}}
+                         \end{tabular}
+                        }
+                    }
+                }
+              }
+              
+ \newsavebox{\revisor}
+ \sbox{\revisor}{\parbox[b]{0.9\textwidth}
+                {\makebox[0.9\textwidth]{}\\
+                 \makebox[0.9\textwidth]
+                    {\parbox[t]{55mm}
+                        {
+                         \begin{tabular}[t]{l}
+                         	{\spacedallcaps{Supervisor}}
+                          \end{tabular}
+                        }
+                     \hfill
+                     \parbox[t]{75mm}
+                        {
+                         \begin{tabular}[t]{>{\centering}m{7cm}}
+                          	\\ \hline
+                          {\spacedlowsmallcaps{\relatore}}
+                         \end{tabular}
+                        }
+                    }
+                }
+              }
+              
+              
+\ifdefined\correlatore\newsavebox{\otherprof}
+\sbox{\otherprof}{\parbox[b]{0.9\textwidth}
+                {\makebox[0.9\textwidth]{}\\
+                 \makebox[0.9\textwidth]
+                    {\parbox[t]{55mm}
+                        {
+                         \begin{tabular}[t]{l}
+                         	{\spacedallcaps{Co-Supervisor}}
+                          \end{tabular}
+                        }
+                     \hfill
+                     \parbox[t]{75mm}
+                        {
+                         \begin{tabular}[t]{>{\centering}m{7cm}}
+                          	\\ \hline
+                          {\spacedlowsmallcaps{\correlatore}}
+                         \end{tabular}
+                        }
+                    }
+                }
+              }
+              
+\fi         
+\ifdefined\controrelatore\newsavebox{\examiner}
+\sbox{\examiner}{\parbox[b]{0.9\textwidth}
+                {\makebox[0.9\textwidth]{}\\
+                 \makebox[0.9\textwidth]
+                    {\parbox[t]{55mm}
+                        {
+                         \begin{tabular}[t]{l}
+                         	{\spacedallcaps{Examiner}}
+                          \end{tabular}
+                        }
+                     \hfill
+                     \parbox[t]{75mm}
+                        {
+                         \begin{tabular}[t]{>{\centering}m{7cm}}
+                          	\\ \hline
+                          {\spacedlowsmallcaps{\controrelatore}}
+                         \end{tabular}
+                        }
+                    }
+                }
+              }
+              
+\fi
+
+\begin{titlepage}
+    \begin{center}
+        \large  
+
+        \hfill
+
+        \bigskip
+        
+        {\spacedallcaps{\myUni}} \\ \bigskip
+        
+        {\spacedallcaps{\myDepartment}} \\ \bigskip
+        
+        {\spacedlowsmallcaps{\mySchool}} \\ \bigskip
+        
+        \bigskip
+         \bigskip
+         
+         {\spacedallcaps{Thesis}} \\ \bigskip \bigskip
+
+        {\color{Maroon}\spacedallcaps{\Large{\myTitle}}} \\ \bigskip \bigskip
+
+        \vfill
+         \usebox{\revisor}
+         \bigskip 
+          \bigskip 
+          
+\ifdefined\correlatore \usebox{\otherprof}
+        \bigskip
+         \bigskip 
+\fi         
+
+\ifdefined\controrelatore \usebox{\examiner}
+        \bigskip
+         \bigskip 
+\fi         
+
+        \usebox{\applier}
+        
+
+    \end{center}        
+\end{titlepage}  
