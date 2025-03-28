@@ -15,6 +15,7 @@
 % with this program; if not, write to the Free Software Foundation, Inc.,
 % 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 %
+
 \RequirePackage[english=usenglishmax]{hyphsubst}
 \RequirePackage{acro}
 \documentclass[oneside,openany,titlepage,numbers=noenddot,headinclude,footinclude=true,cleardoublepage=empty,listof=totoc,paper=a4,fontsize=11pt,australian,twoside=semi,DIV=calc]{scrreprt} 
@@ -69,11 +70,17 @@
 \newcommand{\controrelatore}{{\myOpponentProfTitle} {\myOpponentProfFirstName} \textsc{\myOpponentProfLastName}}
 % -----------------------------------------------------------------------------
 
+% -----------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+
 \input{classicthesis-config}
-\usepackage[a4paper,top=25.4mm,bottom=25.4mm,left=25mm, right=25mm,bindingoffset=6mm]{geometry} 
 \usepackage{minted}
+
+\usepackage[a4paper,top=25.4mm,bottom=25.4mm,left=25mm, right=25mm,bindingoffset=6mm]{geometry} 
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-\usepackage[utf8]{listing}
+% Relax LOL cause it conflicts
+\let\listoflistings\undefined % Unset the \listoflistings command
+\usepackage{listing}
 \usepackage{titlesec}
 % \usepackage[utf8]{inputenc}
 % \usepackage[acronym]{glossaries}

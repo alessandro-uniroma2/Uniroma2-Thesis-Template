@@ -103,7 +103,7 @@ refsection=chapter
 \PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
     \usepackage{fontenc}
 \usepackage{textcomp} % fix warning with missing font shapes
-\usepackage{scrhack} % fix warnings when using KOMA with listings package  
+\usepackage{scrhack} % fix warnings when using KOMA with listings package 
 \usepackage{xspace} % to get the spacing after macros right
 \usepackage{mparhack} % get marginpar right
 %\usepackage[latest]{latexrelease} % will be used once available in more distributions (ISSUE #107)
@@ -166,32 +166,7 @@ refsection=chapter
 
 % \newcommand{\ACF}[1]{{\@in@acrolisttrue\acf{#1}}}
 \makeatother
-
-% ****************************************************************************************************
-% 5. Setup code listings
-% ****************************************************************************************************
-\usepackage{listings}
-%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % For special keywords
-\lstset{language=[LaTeX]Tex,%C++,
-  morekeywords={PassOptionsToPackage,selectlanguage},
-  keywordstyle=\color{RoyalBlue},%\bfseries,
-  basicstyle=\small\ttfamily,
-  %identifierstyle=\color{NavyBlue},
-  commentstyle=\color{Green}\ttfamily,
-  stringstyle=\rmfamily,
-  numbers=left,
-  numberstyle=\scriptsize,%\tiny
-  stepnumber=5,
-  numbersep=8pt,
-  showstringspaces=false,
-  breaklines=true,
-  %frameround=ftff,
-  %frame=single,
-  belowcaptionskip=.75\baselineskip
-  %frame=L
-}
-% ****************************************************************************************************             
-
+            
 
 % ****************************************************************************************************
 % 6. PDFLaTeX, hyperreferences and citation backreferences
@@ -350,11 +325,8 @@ refsection=chapter
 \usetikzlibrary{arrows, backgrounds, patterns, shapes}
 \usepackage{arydshln}
 
-\usepackage{algorithm}
-\usepackage{algorithmic}
 \newcommand{\algorithmautorefname}{Algorithm}
 
-\renewcommand{\lstlistlistingname}{List of Listings}
 
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -369,7 +341,6 @@ refsection=chapter
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
-\numberwithin{algorithm}{chapter}
 \sloppy
 
 \renewcommand{\bibfont}{\footnotesize}

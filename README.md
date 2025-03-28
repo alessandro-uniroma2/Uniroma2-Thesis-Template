@@ -56,3 +56,7 @@ You should replace the configuration at the top of `thesis.tex` with your actual
     \newcommand{\myUni}{Uniroma2 "Tor Vergata" University}
 
 ```
+
+## Compilation
+
+In Overleaf, you'll need to use LaTeX 2021 to make this compile properly.
